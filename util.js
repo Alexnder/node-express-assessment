@@ -1,3 +1,4 @@
+// eslint-disable-next-line func-names
 (function() {
   this.asyncSum = async (a, b) => {
     return new Promise(resolve => {
