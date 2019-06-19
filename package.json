@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node index.js",
+    "serve": "babel-node server.js",
     "test": "mocha -r @babel/register"
   },
   "author": "",
@@ -16,5 +17,8 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3",
     "mocha": "^6.1.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
