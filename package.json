@@ -2,9 +2,8 @@
   "name": "assessment",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "babel-node index.js",
     "serve": "babel-node server.js",
     "watch": "nodemon --exec babel-node server.js",
     "test": "mocha -r @babel/register"
@@ -19,12 +18,12 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3",
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "nodemon": "^1.19.1"
   },
   "dependencies": {
     "axios": "^0.19.0",
     "express": "^4.17.1",
-    "md5": "^2.2.1",
-    "nodemon": "^1.19.1"
+    "md5": "^2.2.1"
   }
 }
