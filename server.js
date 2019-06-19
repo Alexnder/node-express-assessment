@@ -1,5 +1,6 @@
 import express from 'express'
 import axios from 'axios'
+import md5 from 'md5'
 import { getById } from './users'
 import { writeFile, readFile, isFileExists } from './file'
 
@@ -18,8 +19,7 @@ app.get('/api/user/:userId/avatar', async (req, res) => {
     const id = req.params.userId
     const user = await getById(id)
     const avatarUrl = user.data.avatar
-    const extension = avatarUrl.split('.').pop()
-    const cacheFileName = `${id}.${extension}`
+    const cacheFileName = md5(avatarUrl)
     let fileContent
     if (await isFileExists(cacheFileName)) {
       fileContent = await readFile(cacheFileName)
