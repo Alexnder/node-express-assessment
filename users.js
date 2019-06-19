@@ -1,6 +1,6 @@
+import md5 from 'md5'
 import api from './api'
 
-// eslint-disable-next-line func-names
 async function getById(id) {
   try {
     const response = await api.get(`users/${id}`)
@@ -14,5 +14,10 @@ async function getById(id) {
     throw new Error('cannot access api')
   }
 }
+async function getAvatarCache(id) {
+  const user = await getById(id)
+  const avatarUrl = user.data.avatar
+  return { avatarUrl, avatarCache: md5(avatarUrl) }
+}
 
-export { getById }
+export { getById, getAvatarCache }

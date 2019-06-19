@@ -34,5 +34,21 @@ async function isFileExists(filename) {
     })
   })
 }
+async function removeFile(filename) {
+  return new Promise((resolve, reject) => {
+    fs.unlink(path.join('var', filename), (err) => {
+      if (err) {
+        reject(err)
+        return
+      }
+      resolve()
+    })
+  })
+}
 
-export { writeFile, readFile, isFileExists }
+export {
+  writeFile,
+  readFile,
+  isFileExists,
+  removeFile,
+}
